@@ -8,7 +8,7 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 
 ##快速启动Mesos Master, Marathon 和 Chronos
 
-依据数人科技在生产环境上的实践经验，我们可以将zookeeper，Mesos-Master，Marathon以及Chronos部署在一起，建议配置为``3个host X 2核4G``。下面是详细的部署过程。
+依据数人科技在生产环境上的实践经验，我们可以将zookeeper，Mesos-Master，Marathon 以及 Chronos 部署在一起，建议配置为``3个host X 2核4G``。下面是详细的部署过程。
 
 1. 创建3台云主机
 
@@ -22,9 +22,50 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 
 2. 配置zookeeper
 
-  ```bash
-  
-  ```
+ 在3台主机``1, 2, 3``上分别执行下面命令
+ 
+  * 主机 ``1``
+ 
+    ```bash
+    # echo 1 > /var/lib/zookeeper/myid
+    # export ZK1=<zookeeper 1 ip>
+    # export ZK2=<zookeeper 2 ip>
+    # export ZK3=<zookeeper 3 ip>
+    # cat << EOF >>/etc/zookeeper/conf/zoo.cfg
+    >server.1=$ZK1:2888:3888
+    >server.2=$ZK2:2888:3888
+    >server.3=$ZK3:2888:3888
+    >EOF
+    ```
+
+ * 主机 ``2``
+
+    ```bash
+    # echo 2 > /var/lib/zookeeper/myid
+    # export ZK1=<zookeeper 1 ip>
+    # export ZK2=<zookeeper 2 ip>
+    # export ZK3=<zookeeper 3 ip>
+    # cat << EOF >>/etc/zookeeper/conf/zoo.cfg
+    >server.1=$ZK1:2888:3888
+    >server.2=$ZK2:2888:3888
+    >server.3=$ZK3:2888:3888
+    >EOF
+    ```
+
+ * 主机 ``3``
+
+    ```bash
+    # echo 3 > /var/lib/zookeeper/myid
+    # export ZK1=<zookeeper 1 ip>
+    # export ZK2=<zookeeper 2 ip>
+    # export ZK3=<zookeeper 3 ip>
+    # cat << EOF >>/etc/zookeeper/conf/zoo.cfg
+    >server.1=$ZK1:2888:3888
+    >server.2=$ZK2:2888:3888
+    >server.3=$ZK3:2888:3888
+    >EOF
+    ```
+
   *Note: 更多参数请访问[数人科技开源服务](http://get.dataman.io)*
 
 
