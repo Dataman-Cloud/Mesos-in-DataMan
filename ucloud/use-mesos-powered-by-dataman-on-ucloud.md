@@ -17,11 +17,11 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 
 ###方案一：使用国内的 docker 镜像加速器
 
-  为你的Mesos集群配置国内的 docker 镜像加速器，目前国内很多厂商提供 docker 加速服务， 譬如可以参考[daocloud 的 docker 加速服务](http://get.daocloud.io/)
+  目前国内很多厂商提供 docker 加速服务， 譬如可以参考[daocloud 的 docker 加速服务](http://get.daocloud.io/)，为你的**Mesos集群**配置镜像加速器。
 
 ###方案二：搭建私有仓库
 
-  我们也可以创建一个本地仓库供team内部使用。这里建议参考dockerpool的文章[搭建私有仓库](http://dockerpool.com/static/books/docker_practice/repository/local_repo.html)来搭建私有仓库。 同时，可以结合 docker 加速服务来快速拉取公有镜像到内部仓库。
+  我们也可以创建一个本地仓库供集群使用，这里建议参考dockerpool的文章[搭建私有仓库](http://dockerpool.com/static/books/docker_practice/repository/local_repo.html)来搭建私有仓库。 同时，可以结合方案一的加速服务来快速拉取公有镜像到内部仓库。
   
   另外，在使用 Ucloud 云主机搭建私有仓库时，请提前做好规划，申请足够大的数据盘来为本地仓库预留充足的存储空间。
 
