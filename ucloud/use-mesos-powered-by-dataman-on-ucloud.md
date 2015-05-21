@@ -5,9 +5,11 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 
 *Note: 更多配置信息请访问[数人科技开源服务](http://get.dataman.io)*
 
-##快速启动Mesos Master, Marathon, Chronos
 
-根据数人科技的最佳实践，
+##快速启动Mesos Master, Marathon 和 Chronos
+
+依据数人科技在生产环境上的实践经验，我们可以将zookeeper，Mesos-Master，Marathon以及Chronos部署在一起。下面是详细的配置过程。
+
 1. 创建主机
   * Ubuntu 14.04 64位
 
