@@ -66,6 +66,14 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
     >EOF
     ```
 
+* 在``1, 2, 3``上启动服务
+
+    ```bash
+    #/usr/share/zookeeper/bin/zkServer.sh start-background
+    ```
+
+3. 
+
   *Note: 更多参数请访问[数人科技开源服务](http://get.dataman.io)*
 
 
