@@ -58,13 +58,13 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
     >EOF
     ```
 
-在``1, 2, 3``上启动服务
+  在``1, 2, 3``上启动服务
 
-   ```bash
-   #/usr/share/zookeeper/bin/zkServer.sh start-background
-   ```
+    ```bash
+    #/usr/share/zookeeper/bin/zkServer.sh start-background
+    ```
 
-2. 配置Mesos Master
+3. 配置Mesos Master
 
   在3台主机``1, 2, 3``上分别执行下面命令
   
@@ -78,17 +78,69 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
     # echo `hostname -I` > /etc/mesos-master/hostname
     # echo "DataMan" > /etc/mesos-master/cluster
     ```
+ 
   启动服务
   
+  * Ubuntu 14.04 64位
+ 
     ```bash
     # start mesos-master
     ```
+ 
+  * CentOS 7 64位
+ 
+    ```bash
+    # service mesos-master restart
+    ```
 
-3. 配置Marathon
-4. 配置Chronos
+4. 配置Marathon
+
+  在3台主机``1, 2, 3``上分别执行下面命令
+
+    ```bash
+    # mkdir -p  /etc/marathon/conf
+    # cd /etc/marathon/conf/
+    # export ZK1=<zookeeper 1 ip>
+    # export ZK2=<zookeeper 2 ip>
+    # export ZK3=<zookeeper 3 ip>
+    # echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/marathon" > zk
+    # echo `hostname -I` > hostname
+    # echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/mesos" > master
+    ```
+ 
+  启动服务
+  
+  * Ubuntu 14.04 64位
+ 
+    ```bash
+    # start marathon
+    ```
+ 
+  * CentOS 7 64位
+ 
+    ```bash
+    # service marathon restart
+    ```
 
 
-  *Note: 更多参数请访问[数人科技开源服务](http://get.dataman.io)*
+5. 配置Chronos
+
+
+  在3台主机``1, 2, 3``上分别执行下面命令启动服务
+  
+  * Ubuntu 14.04 64位
+ 
+    ```bash
+    # start chronos
+    ```
+ 
+  * CentOS 7 64位
+ 
+    ```bash
+    # service chronos restart
+    ```
+
+ *Note: 更多参数请访问[数人科技开源服务](http://get.dataman.io)*
 
 
 ##快速启动Mesos Slave
