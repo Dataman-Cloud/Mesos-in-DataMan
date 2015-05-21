@@ -26,3 +26,6 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
   另外，在使用 Ucloud 云主机搭建私有仓库时，请提前做好规划，申请足够大的数据盘来为本地仓库预留充足的存储空间。
 
 ##联系我们
+
+  [数人科技团队](http://www.dataman-inc.com/contact.html)
+  ![微信](http://www.dataman-inc.com/images/code-weixin.jpg)
