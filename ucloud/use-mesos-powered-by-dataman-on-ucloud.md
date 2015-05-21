@@ -24,41 +24,12 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 
  在3台主机``1, 2, 3``上分别执行下面命令
  
-  * 主机 ``1``
- 
     ```bash
-    # echo 1 > /var/lib/zookeeper/myid
+    # export MYID=<1 or 2 or 3>
     # export ZK1=<zookeeper 1 ip>
     # export ZK2=<zookeeper 2 ip>
     # export ZK3=<zookeeper 3 ip>
-    # cat << EOF >>/etc/zookeeper/conf/zoo.cfg
-    >server.1=$ZK1:2888:3888
-    >server.2=$ZK2:2888:3888
-    >server.3=$ZK3:2888:3888
-    >EOF
-    ```
-
- * 主机 ``2``
-
-    ```bash
-    # echo 2 > /var/lib/zookeeper/myid
-    # export ZK1=<zookeeper 1 ip>
-    # export ZK2=<zookeeper 2 ip>
-    # export ZK3=<zookeeper 3 ip>
-    # cat << EOF >>/etc/zookeeper/conf/zoo.cfg
-    >server.1=$ZK1:2888:3888
-    >server.2=$ZK2:2888:3888
-    >server.3=$ZK3:2888:3888
-    >EOF
-    ```
-
- * 主机 ``3``
-
-    ```bash
-    # echo 3 > /var/lib/zookeeper/myid
-    # export ZK1=<zookeeper 1 ip>
-    # export ZK2=<zookeeper 2 ip>
-    # export ZK3=<zookeeper 3 ip>
+    # echo $MYID > /var/lib/zookeeper/myid
     # cat << EOF >>/etc/zookeeper/conf/zoo.cfg
     >server.1=$ZK1:2888:3888
     >server.2=$ZK2:2888:3888
