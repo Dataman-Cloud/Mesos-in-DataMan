@@ -3,12 +3,21 @@
 
 Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安装，配置还比较繁琐，且鲜有经过生产环境验证的安装包。数人科技对标准版进行定制和二次开发，并部署到用户的生产环境中。你可以参考该用户手册，快速搭建一套数人科技的 **Mesos/Marathon/Bamboo/Chronos** 环境。
 
+*Note: 更多配置信息请访问[http://get.dataman.io/](http://get.dataman.io/)*
+
 ##快速启动Mesos Master, Marathon, Chronos
 
 
 ##快速启动Mesos Slave
 
 ##快速启动Bamboo
+
+###Ubuntu 14.04 64位
+
+  1. 创建主机时选择**行业**镜像里的**Bamboo数人科技Ubuntu企业版** ， 其它按需配置
+  2. 登陆主机，按如下参数配置
+
+###CentOS 7 64位
 
 
 ##docker 仓库（可选）
