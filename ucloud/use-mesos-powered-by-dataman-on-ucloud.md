@@ -64,7 +64,29 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
    #/usr/share/zookeeper/bin/zkServer.sh start-background
    ```
 
-3. 
+2. 配置Mesos Master
+
+  在3台主机``1, 2, 3``上分别执行下面命令
+  
+    ```bash
+    # export ZK1=<zookeeper 1 ip>
+    # export ZK2=<zookeeper 2 ip>
+    # export ZK3=<zookeeper 3 ip>
+    # echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/mesos" > /etc/mesos/zk
+    # echo 2 > /etc/mesos-master/quorum
+    # echo `hostname -I` > /etc/mesos-master/ip
+    # echo `hostname -I` > /etc/mesos-master/hostname
+    # echo "DataMan" > /etc/mesos-master/cluster
+    ```
+  启动服务
+  
+    ```bash
+    # start mesos-master
+    ```
+
+3. 配置Marathon
+4. 配置Chronos
+
 
   *Note: 更多参数请访问[数人科技开源服务](http://get.dataman.io)*
 
