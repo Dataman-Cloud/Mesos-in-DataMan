@@ -12,12 +12,23 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 
 ##快速启动Bamboo
 
-###Ubuntu 14.04 64位
+1. 创建主机
+  * Ubuntu 14.04 64位
 
-  1. 创建主机时选择**行业**镜像里的**Bamboo数人科技Ubuntu企业版** ， 其它按需配置
-  2. 登陆主机，按如下参数配置
+    选择**行业**镜像里的**Bamboo数人科技Ubuntu企业版** ， 其它按需配置
 
-###CentOS 7 64位
+  * CentOS 7 64位
+  
+     选择**行业**镜像里的**Bamboo数人科技Ubuntu企业版** ， 其它按需配置
+
+2. 登陆主机，按如下参数配置
+
+  ```bash
+  /opt/bamboo/bamboo -config_from_flags -haproxy_check -bamboo_endpoint="http://<本机IP>:8000" -bamboo_zk_host="<IP1>:2181,<IP2>:2181" -marathon_endpoint="http://<Marathon IP>:8080"
+  ```
+  *Note: 更多参数请访问[在linux上安装Bamboo数人科技企业版](http://get.dataman.io/#bamboo)*
+
+  
 
 
 ##docker 仓库（可选）
