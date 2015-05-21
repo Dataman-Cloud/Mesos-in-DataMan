@@ -18,7 +18,7 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 
   * CentOS 7 64位
   
-     选择*行业*镜像里的**DataMan-Mesos-Master-0220-on-CentOS-7-64**（数人科技CentOS企业版
+     选择*行业*镜像里的**DataMan-Mesos-Master-0220-on-CentOS-7-64**（数人科技CentOS企业版）
 
 2. 配置zookeeper
 
@@ -39,24 +39,24 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
     >EOF
     ```
 
- * CentOS 7 64位
+  * CentOS 7 64位
 
-在3台主机``1, 2, 3``上分别执行下面命令
+  在3台主机``1, 2, 3``上分别执行下面命令
  
-    ```bash
-    # export MYID=<1 or 2 or 3>
-    # export ZK1=<zookeeper 1 ip>
-    # export ZK2=<zookeeper 2 ip>
-    # export ZK3=<zookeeper 3 ip>
-    # echo $MYID > /var/lib/zookeeper/myid
-    # cp /usr/share/zookeeper/conf/zoo_sample.cfg /usr/share/zookeeper/conf/zoo.cfg
-    # sed -i "/dataDir=/c dataDir=/var/lib/zookeeper" /usr/share/zookeeper/conf/zoo.cfg
-    # cat << EOF >>/etc/zookeeper/conf/zoo.cfg
-    >server.1=$ZK1:2888:3888
-    >server.2=$ZK2:2888:3888
-    >server.3=$ZK3:2888:3888
-    >EOF
-    ```
+     ```bash
+     # export MYID=<1 or 2 or 3>
+     # export ZK1=<zookeeper 1 ip>
+     # export ZK2=<zookeeper 2 ip>
+     # export ZK3=<zookeeper 3 ip>
+     # echo $MYID > /var/lib/zookeeper/myid
+     # cp /usr/share/zookeeper/conf/zoo_sample.cfg /usr/share/zookeeper/conf/zoo.cfg
+     # sed -i "/dataDir=/c dataDir=/var/lib/zookeeper" /usr/share/zookeeper/conf/zoo.cfg
+     # cat << EOF >>/etc/zookeeper/conf/zoo.cfg
+     >server.1=$ZK1:2888:3888
+     >server.2=$ZK2:2888:3888
+     >server.3=$ZK3:2888:3888
+     >EOF
+     ```
 
 在``1, 2, 3``上启动服务
 
