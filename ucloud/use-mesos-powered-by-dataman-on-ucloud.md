@@ -11,13 +11,16 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 依据数人科技在生产环境上的实践经验，我们可以将zookeeper，Mesos-Master，Marathon以及Chronos部署在一起。下面是详细的配置过程。
 
 1. 创建主机
+
   * Ubuntu 14.04 64位
 
-    选择**行业**镜像里的**Bamboo数人科技Ubuntu企业版** ， 其它按需配置
+    选择**行业**镜像里的**Bamboo数人科技Ubuntu企业版** 
 
   * CentOS 7 64位
   
-     选择**行业**镜像里的**Bamboo数人科技CentOS企业版** ， 其它按需配置
+     选择**行业**镜像里的**Bamboo数人科技CentOS企业版** 
+
+配置建议
 
 2. 登陆主机，按如下参数配置
 
@@ -29,19 +32,32 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 
 ##快速启动Mesos Slave
 
+基于不同的应用场景，Mesos Slave节点无论是数量还是配置都会有不同的需求。但Slave节点的数量是可弹性增加的，所以我们建议初期用户可以启动2-6台``2核4G``的云主机试用；生产环境建议``4核8G``或更高，节点数量按需增加即可。
+
+*Note：我们后期会有集群节点梯度配置优化的相关分享*
 
 1. 创建主机
+
   * Ubuntu 14.04 64位
 
-    选择**行业**镜像里的**Bamboo数人科技Ubuntu企业版** ， 其它按需配置
+    选择**行业**镜像里的**DataMan-Mesos-Slave-0220-on-Ubuntu-14-64** （Mesos Slave数人科技企业版）
 
   * CentOS 7 64位
   
-     选择**行业**镜像里的**DataMan-Mesos-Slave-0220-on-CentOS-7-64**（Mesos Slave数人科技企业版）， 其它按需配置
+     选择**行业**镜像里的**DataMan-Mesos-Slave-0220-on-CentOS-7-64**（Mesos Slave数人科技企业版）
 
-2. 登陆主机，启动Mesos Slave
+2. 登陆主机，执行如下命令来配置Mesos Slave
 
   ```bash
+  export $ZK1=<zookeeper IP1>
+  export $ZK2=<zookeeper IP2>
+  export $ZK3=<zookeeper IP3>
+  echo "docker,mesos" > /etc/mesos-slave/containerizers
+  echo "cgroups/cpu,cgroups/mem" > /etc/mesos-slave/isolation
+  echo `hostname -I` > /etc/mesos-slave/ip
+  echo `hostname -I` > /etc/mesos-slave/hostname
+  echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/mesos" > /etc/mesos/zk
+  restart mesos-slave
   ```
   *Note: 更多参数请访问[数人科技开源服务](http://get.dataman.io)*
 
@@ -51,11 +67,13 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 1. 创建主机
   * Ubuntu 14.04 64位
 
-    选择**行业**镜像里的**Bamboo数人科技Ubuntu企业版** ， 其它按需配置
+    选择**行业**镜像里的**Bamboo数人科技Ubuntu企业版** 
 
   * CentOS 7 64位
   
-     选择**行业**镜像里的**Bamboo数人科技CentOS企业版** ， 其它按需配置
+     选择**行业**镜像里的**Bamboo数人科技CentOS企业版** 
+
+配置建议
 
 2. 登陆主机，按如下参数配置
 
@@ -82,4 +100,5 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 ##联系我们
 
   [数人科技团队](http://www.dataman-inc.com/contact.html)
+
   ![微信](http://www.dataman-inc.com/images/code-weixin.jpg)
