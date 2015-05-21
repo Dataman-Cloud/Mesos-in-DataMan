@@ -65,20 +65,21 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 ##快速启动Bamboo
 
 1. 创建主机
+
   * Ubuntu 14.04 64位
 
-    选择**行业**镜像里的**Bamboo数人科技Ubuntu企业版** 
+    选择*行业*镜像里的**DataMan-Bamboo-090-on-Ubuntu-14-64** （Bamboo数人科技Ubuntu企业版）
 
   * CentOS 7 64位
   
-     选择**行业**镜像里的**Bamboo数人科技CentOS企业版** 
+     选择*行业*镜像里的**DataMan-Bamboo-090-on-CentOS-7-64** （Bamboo数人科技CentOS企业版）
 
-配置建议
+  Bamboo 云主机建议配置为``2核4G``，另外，由于Bamboo host是集群服务发现的总出口，该点存在网络压力，需要在生产环境应用负载均衡等手段进行优化。
 
 2. 登陆主机，按如下参数配置
 
   ```bash
-  /opt/bamboo/bamboo -config_from_flags -haproxy_check -bamboo_endpoint="http://<本机IP>:8000" -bamboo_zk_host="<IP1>:2181,<IP2>:2181" -marathon_endpoint="http://<Marathon IP>:8080"
+  /opt/bamboo/bamboo -config_from_flags -haproxy_check -bamboo_endpoint="http://<本机IP>:8000" -bamboo_zk_host="<IP1>:2181,<IP2>:2181,<IP3>:2181" -marathon_endpoint="http://<Marathon IP>:8080"
   ```
   *Note: 更多参数请访问[在linux上安装Bamboo数人科技企业版](http://get.dataman.io/#bamboo)*
 
@@ -95,7 +96,7 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 
   我们也可以创建一个本地仓库供集群使用，这里建议参考dockerpool的文章[搭建私有仓库](http://dockerpool.com/static/books/docker_practice/repository/local_repo.html)来搭建私有仓库。 同时，可以结合方案一的加速服务来快速拉取公有镜像到内部仓库。
   
-  另外，在使用 Ucloud 云主机搭建私有仓库时，请提前做好规划，申请足够大的数据盘来为本地仓库预留充足的存储空间。
+  另外，在使用 Ucloud 云主机搭建私有仓库时，请提前做好规划，譬如网络带宽，以及申请足够大的数据盘来为本地仓库预留充足的存储空间等。
 
 ##联系我们
 
