@@ -75,7 +75,7 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
     # echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/mesos" > /etc/mesos/zk
     # echo 2 > /etc/mesos-master/quorum
     # echo `hostname -I` > /etc/mesos-master/ip
-    # echo `hostname -I` > /etc/mesos-master/hostname
+    # echo `hostname` > /etc/mesos-master/hostname
     # echo "DataMan" > /etc/mesos-master/cluster
     ```
  
