@@ -104,7 +104,7 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
     # export ZK2=<zookeeper 2 ip>
     # export ZK3=<zookeeper 3 ip>
     # echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/marathon" > zk
-    # echo `hostname -I` > hostname
+    # echo `hostname` > hostname
     # echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/mesos" > master
     ```
  
@@ -168,7 +168,7 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
   echo "docker,mesos" > /etc/mesos-slave/containerizers
   echo "cgroups/cpu,cgroups/mem" > /etc/mesos-slave/isolation
   echo `hostname -I` > /etc/mesos-slave/ip
-  echo `hostname -I` > /etc/mesos-slave/hostname
+  echo `hostname` > /etc/mesos-slave/hostname
   echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/mesos" > /etc/mesos/zk
   restart mesos-slave
   ```
