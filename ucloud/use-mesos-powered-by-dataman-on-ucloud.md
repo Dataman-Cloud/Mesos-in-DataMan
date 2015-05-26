@@ -9,6 +9,11 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 
 ![Mesos集群架构图](../ucloud/mesos-cluster-structure.png)
 
+1. mesos-master-*: 部署了zookeeper, ，Mesos-Master，Marathon 以及 Chronos
+2. mesos-slave-*: 部署了mesos-slave agent
+3. Service-Discovery-*: 部署了bamboo来做服务发现
+
+
 ##先决条件
 
 1. 用户需要为集群启动的每一个host绑定IP地址，并保证这些host之间可以通过IP直接通信。为了保证通信质量，我们建议您在云上设置**子网**并将集群中的host放到同一个子网内。
