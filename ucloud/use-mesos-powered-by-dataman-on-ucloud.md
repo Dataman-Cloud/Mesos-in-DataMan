@@ -27,12 +27,14 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
  在3台主机``1, 2, 3``上分别执行下面命令
  
     ```bash
-   root@localhost:~$export MYID=< 1 or 2 or 3 >
-   root@localhost:~$export ZK1=< zookeeper IP1 >
-   root@localhost:~$export ZK2=< zookeeper IP2 >
-   root@localhost:~$export ZK3=< zookeeper IP3 >
-   root@localhost:~$echo $MYID > /var/lib/zookeeper/myid
-   root@localhost:~$cat << EOF >>/etc/zookeeper/conf/zoo.cfg
+    # 分别设置3台主机的 MYID 为 1，2 或 3
+    root@localhost:~$export MYID=< 1 or 2 or 3 >
+    # 分别设置环境变量 ZK1, ZK2 和 ZK3 为3台主机的ip地址
+    root@localhost:~$export ZK1=< zookeeper IP1 >
+    root@localhost:~$export ZK2=< zookeeper IP2 >
+    root@localhost:~$export ZK3=< zookeeper IP3 >
+    root@localhost:~$echo $MYID > /var/lib/zookeeper/myid
+    root@localhost:~$cat << EOF >>/etc/zookeeper/conf/zoo.cfg
     >server.1=$ZK1:2888:3888
     >server.2=$ZK2:2888:3888
     >server.3=$ZK3:2888:3888
@@ -44,14 +46,16 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
   在3台主机``1, 2, 3``上分别执行下面命令
  
     ```bash
-   root@localhost:~$export MYID=< 1 or 2 or 3 >
-   root@localhost:~$export ZK1=< zookeeper IP1 >
-   root@localhost:~$export ZK2=< zookeeper IP2 >
-   root@localhost:~$export ZK3=< zookeeper IP3 >
-   root@localhost:~$echo $MYID > /var/lib/zookeeper/myid
-   root@localhost:~$cp /usr/share/zookeeper/conf/zoo_sample.cfg /usr/share/zookeeper/conf/zoo.cfg
-   root@localhost:~$sed -i "/dataDir=/c dataDir=/var/lib/zookeeper" /usr/share/zookeeper/conf/zoo.cfg
-   root@localhost:~$cat << EOF >>/etc/zookeeper/conf/zoo.cfg
+    # 分别设置3台主机的 MYID 为 1，2 或 3
+    root@localhost:~$export MYID=< 1 or 2 or 3 >
+    # 分别设置环境变量 ZK1, ZK2 和 ZK3 为3台主机的ip地址
+    root@localhost:~$export ZK1=< zookeeper IP1 >
+    root@localhost:~$export ZK2=< zookeeper IP2 >
+    root@localhost:~$export ZK3=< zookeeper IP3 >
+    root@localhost:~$echo $MYID > /var/lib/zookeeper/myid
+    root@localhost:~$cp /usr/share/zookeeper/conf/zoo_sample.cfg /usr/share/zookeeper/conf/zoo.cfg
+    root@localhost:~$sed -i "/dataDir=/c dataDir=/var/lib/zookeeper" /usr/share/zookeeper/conf/zoo.cfg
+    root@localhost:~$cat << EOF >>/etc/zookeeper/conf/zoo.cfg
     >server.1=$ZK1:2888:3888
     >server.2=$ZK2:2888:3888
     >server.3=$ZK3:2888:3888
@@ -61,7 +65,7 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
   在``1, 2, 3``上启动服务
 
     ```bash
-   root@localhost:~$/usr/share/zookeeper/bin/zkServer.sh start
+    root@localhost:~$/usr/share/zookeeper/bin/zkServer.sh start
     ```
 
 3. 配置Mesos Master
@@ -69,14 +73,15 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
   在3台主机``1, 2, 3``上分别执行下面命令
   
     ```bash
-   root@localhost:~$export ZK1=< zookeeper IP1 >
-   root@localhost:~$export ZK2=< zookeeper IP2 >
-   root@localhost:~$export ZK3=< zookeeper IP3 >
-   root@localhost:~$echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/mesos" > /etc/mesos/zk
-   root@localhost:~$echo 2 > /etc/mesos-master/quorum
-   root@localhost:~$echo `hostname -I` > /etc/mesos-master/ip
-   root@localhost:~$echo `hostname` > /etc/mesos-master/hostname
-   root@localhost:~$echo "DataMan" > /etc/mesos-master/cluster
+    # 分别设置环境变量 ZK1, ZK2 和 ZK3 为3台主机的ip地址
+    root@localhost:~$export ZK1=< zookeeper IP1 >
+    root@localhost:~$export ZK2=< zookeeper IP2 >
+    root@localhost:~$export ZK3=< zookeeper IP3 >
+    root@localhost:~$echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/mesos" > /etc/mesos/zk
+    root@localhost:~$echo 2 > /etc/mesos-master/quorum
+    root@localhost:~$echo `hostname -I` > /etc/mesos-master/ip
+    root@localhost:~$echo `hostname` > /etc/mesos-master/hostname
+    root@localhost:~$echo "DataMan" > /etc/mesos-master/cluster
     ```
  
   启动服务
@@ -84,13 +89,13 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
   * Ubuntu 14.04 64位
  
     ```bash
-   root@localhost:~$start mesos-master
+    root@localhost:~$start mesos-master
     ```
  
   * CentOS 7 64位
  
     ```bash
-   root@localhost:~$service mesos-master restart
+    root@localhost:~$service mesos-master restart
     ```
 
 4. 配置Marathon
@@ -98,14 +103,15 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
   在3台主机``1, 2, 3``上分别执行下面命令
 
     ```bash
-   root@localhost:~$mkdir -p  /etc/marathon/conf
-   root@localhost:~$cd /etc/marathon/conf/
-   root@localhost:~$export ZK1=< zookeeper IP1 >
-   root@localhost:~$export ZK2=< zookeeper IP2 >
-   root@localhost:~$export ZK3=< zookeeper IP3 >
-   root@localhost:~$echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/marathon" > zk
-   root@localhost:~$echo `hostname` > hostname
-   root@localhost:~$echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/mesos" > master
+    root@localhost:~$mkdir -p  /etc/marathon/conf
+    root@localhost:~$cd /etc/marathon/conf/
+    # 分别设置环境变量 ZK1, ZK2 和 ZK3 为3台主机的ip地址
+    root@localhost:~$export ZK1=< zookeeper IP1 >
+    root@localhost:~$export ZK2=< zookeeper IP2 >
+    root@localhost:~$export ZK3=< zookeeper IP3 >
+    root@localhost:~$echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/marathon" > zk
+    root@localhost:~$echo `hostname` > hostname
+    root@localhost:~$echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/mesos" > master
     ```
  
   启动服务
@@ -113,13 +119,13 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
   * Ubuntu 14.04 64位
  
     ```bash
-   root@localhost:~$start marathon
+    root@localhost:~$start marathon
     ```
  
   * CentOS 7 64位
  
     ```bash
-   root@localhost:~$service marathon restart
+    root@localhost:~$service marathon restart
     ```
 
 
@@ -131,13 +137,13 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
   * Ubuntu 14.04 64位
  
     ```bash
-   root@localhost:~$start chronos
+    root@localhost:~$start chronos
     ```
  
   * CentOS 7 64位
  
     ```bash
-   root@localhost:~$service chronos restart
+    root@localhost:~$service chronos restart
     ```
 
  *Note: 更多参数请访问[数人科技开源服务](http://get.dataman.io)*
@@ -162,15 +168,16 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 2. 登陆主机，执行如下命令来配置Mesos Slave
 
   ```bash
- root@localhost:~$ export $ZK1=< zookeeper IP1 >
- root@localhost:~$ export $ZK2=< zookeeper IP2 >
- root@localhost:~$ export $ZK3=< zookeeper IP3 >
- root@localhost:~$ echo "docker,mesos" > /etc/mesos-slave/containerizers
- root@localhost:~$ echo "cgroups/cpu,cgroups/mem" > /etc/mesos-slave/isolation
- root@localhost:~$ echo `hostname -I` > /etc/mesos-slave/ip
- root@localhost:~$ echo `hostname` > /etc/mesos-slave/hostname
- root@localhost:~$ echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/mesos" > /etc/mesos/zk
- root@localhost:~$ restart mesos-slave
+  # 分别设置环境变量 ZK1, ZK2 和 ZK3 为3台主机的ip地址
+  root@localhost:~$ export $ZK1=< zookeeper IP1 >
+  root@localhost:~$ export $ZK2=< zookeeper IP2 >
+  root@localhost:~$ export $ZK3=< zookeeper IP3 >
+  root@localhost:~$ echo "docker,mesos" > /etc/mesos-slave/containerizers
+  root@localhost:~$ echo "cgroups/cpu,cgroups/mem" > /etc/mesos-slave/isolation
+  root@localhost:~$ echo `hostname -I` > /etc/mesos-slave/ip
+  root@localhost:~$ echo `hostname` > /etc/mesos-slave/hostname
+  root@localhost:~$ echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/mesos" > /etc/mesos/zk
+  root@localhost:~$ restart mesos-slave
   ```
   *Note: 更多参数请访问[数人科技开源服务](http://get.dataman.io)*
 
@@ -192,7 +199,7 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 2. 登陆主机，按如下参数配置
 
   ```bash
- root@localhost:~$ /opt/bamboo/bamboo -config_from_flags -haproxy_check -bamboo_endpoint="http://localhost:8000" -bamboo_zk_host="<zookeeper IP1>:2181,<zookeeper IP2>:2181,<zookeeper IP3>:2181" -marathon_endpoint="http://<Marathon IP>:8080"
+  root@localhost:~$ /opt/bamboo/bamboo -config_from_flags -haproxy_check -bamboo_endpoint="http://localhost:8000" -bamboo_zk_host="<zookeeper IP1>:2181,<zookeeper IP2>:2181,<zookeeper IP3>:2181" -marathon_endpoint="http://<Marathon IP>:8080"
   ```
   *Note: 更多参数请访问[在linux上安装Bamboo数人科技企业版](http://get.dataman.io/#bamboo)*
 
