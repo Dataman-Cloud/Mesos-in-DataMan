@@ -6,6 +6,11 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 *Note: 更多配置信息请访问[数人科技开源服务](http://get.dataman.io)*
 
 
+##先决条件
+
+1. 用户需要为集群启动的每一个host绑定IP地址，并保证这些host之间可以通过IP直接通信。为了保证通信质量，我们建议您在云上设置**子网**并将集群中的host放到同一个子网内。
+2. 为了能在公网上使用mesos/marathon/bamboo的web服务，你的集群需要一个公网IP作为入口，通过配置**跳板机**和**浏览器代理**（譬如： **ssh tunnel**）的方式可以达到这个目的。
+
 ##快速启动Mesos Master, Marathon 和 Chronos
 
 依据数人科技在生产环境上的实践经验，我们可以将zookeeper，Mesos-Master，Marathon 以及 Chronos 部署在一起，建议配置为``3个host X 2核4G``。下面是详细的部署过程。
