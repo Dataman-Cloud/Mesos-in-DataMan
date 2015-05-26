@@ -5,6 +5,9 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 
 *Note: 更多配置信息请访问[数人科技开源服务](http://get.dataman.io)*
 
+##集群架构图
+
+![Mesos集群架构图](../ucloud/mesos-cluster-structure.png)
 
 ##先决条件
 
