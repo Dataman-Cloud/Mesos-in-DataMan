@@ -27,10 +27,10 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
  在3台主机``1, 2, 3``上分别执行下面命令
  
     ```bash
-   root@localhost:~$export MYID=<1 or 2 or 3>
-   root@localhost:~$export ZK1=<zookeeper 1 ip>
-   root@localhost:~$export ZK2=<zookeeper 2 ip>
-   root@localhost:~$export ZK3=<zookeeper 3 ip>
+   root@localhost:~$export MYID=< 1 or 2 or 3 >
+   root@localhost:~$export ZK1=< zookeeper IP1 >
+   root@localhost:~$export ZK2=< zookeeper IP2 >
+   root@localhost:~$export ZK3=< zookeeper IP3 >
    root@localhost:~$echo $MYID > /var/lib/zookeeper/myid
    root@localhost:~$cat << EOF >>/etc/zookeeper/conf/zoo.cfg
     >server.1=$ZK1:2888:3888
@@ -44,10 +44,10 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
   在3台主机``1, 2, 3``上分别执行下面命令
  
     ```bash
-   root@localhost:~$export MYID=<1 or 2 or 3>
-   root@localhost:~$export ZK1=<zookeeper 1 ip>
-   root@localhost:~$export ZK2=<zookeeper 2 ip>
-   root@localhost:~$export ZK3=<zookeeper 3 ip>
+   root@localhost:~$export MYID=< 1 or 2 or 3 >
+   root@localhost:~$export ZK1=< zookeeper IP1 >
+   root@localhost:~$export ZK2=< zookeeper IP2 >
+   root@localhost:~$export ZK3=< zookeeper IP3 >
    root@localhost:~$echo $MYID > /var/lib/zookeeper/myid
    root@localhost:~$cp /usr/share/zookeeper/conf/zoo_sample.cfg /usr/share/zookeeper/conf/zoo.cfg
    root@localhost:~$sed -i "/dataDir=/c dataDir=/var/lib/zookeeper" /usr/share/zookeeper/conf/zoo.cfg
@@ -61,7 +61,7 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
   在``1, 2, 3``上启动服务
 
     ```bash
-   root@localhost:~$/usr/share/zookeeper/bin/zkServer.sh start-background
+   root@localhost:~$/usr/share/zookeeper/bin/zkServer.sh start
     ```
 
 3. 配置Mesos Master
@@ -69,9 +69,9 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
   在3台主机``1, 2, 3``上分别执行下面命令
   
     ```bash
-   root@localhost:~$export ZK1=<zookeeper 1 ip>
-   root@localhost:~$export ZK2=<zookeeper 2 ip>
-   root@localhost:~$export ZK3=<zookeeper 3 ip>
+   root@localhost:~$export ZK1=< zookeeper IP1 >
+   root@localhost:~$export ZK2=< zookeeper IP2 >
+   root@localhost:~$export ZK3=< zookeeper IP3 >
    root@localhost:~$echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/mesos" > /etc/mesos/zk
    root@localhost:~$echo 2 > /etc/mesos-master/quorum
    root@localhost:~$echo `hostname -I` > /etc/mesos-master/ip
@@ -100,9 +100,9 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
     ```bash
    root@localhost:~$mkdir -p  /etc/marathon/conf
    root@localhost:~$cd /etc/marathon/conf/
-   root@localhost:~$export ZK1=<zookeeper 1 ip>
-   root@localhost:~$export ZK2=<zookeeper 2 ip>
-   root@localhost:~$export ZK3=<zookeeper 3 ip>
+   root@localhost:~$export ZK1=< zookeeper IP1 >
+   root@localhost:~$export ZK2=< zookeeper IP2 >
+   root@localhost:~$export ZK3=< zookeeper IP3 >
    root@localhost:~$echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/marathon" > zk
    root@localhost:~$echo `hostname` > hostname
    root@localhost:~$echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/mesos" > master
@@ -162,9 +162,9 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 2. 登陆主机，执行如下命令来配置Mesos Slave
 
   ```bash
- root@localhost:~$ export $ZK1=<zookeeper IP1>
- root@localhost:~$ export $ZK2=<zookeeper IP2>
- root@localhost:~$ export $ZK3=<zookeeper IP3>
+ root@localhost:~$ export $ZK1=< zookeeper IP1 >
+ root@localhost:~$ export $ZK2=< zookeeper IP2 >
+ root@localhost:~$ export $ZK3=< zookeeper IP3 >
  root@localhost:~$ echo "docker,mesos" > /etc/mesos-slave/containerizers
  root@localhost:~$ echo "cgroups/cpu,cgroups/mem" > /etc/mesos-slave/isolation
  root@localhost:~$ echo `hostname -I` > /etc/mesos-slave/ip
@@ -192,7 +192,7 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 2. 登陆主机，按如下参数配置
 
   ```bash
- root@localhost:~$ /opt/bamboo/bamboo -config_from_flags -haproxy_check -bamboo_endpoint="http://<本机IP>:8000" -bamboo_zk_host="<IP1>:2181,<IP2>:2181,<IP3>:2181" -marathon_endpoint="http://<Marathon IP>:8080"
+ root@localhost:~$ /opt/bamboo/bamboo -config_from_flags -haproxy_check -bamboo_endpoint="http://localhost:8000" -bamboo_zk_host="<zookeeper IP1>:2181,<zookeeper IP2>:2181,<zookeeper IP3>:2181" -marathon_endpoint="http://<Marathon IP>:8080"
   ```
   *Note: 更多参数请访问[在linux上安装Bamboo数人科技企业版](http://get.dataman.io/#bamboo)*
 
