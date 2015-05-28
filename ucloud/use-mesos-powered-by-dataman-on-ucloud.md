@@ -93,7 +93,7 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
     root@localhost:~$echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/mesos" > /etc/mesos/zk
     root@localhost:~$echo 2 > /etc/mesos-master/quorum
     root@localhost:~$echo `hostname -I` > /etc/mesos-master/ip
-    root@localhost:~$echo `hostname` > /etc/mesos-master/hostname
+    root@localhost:~$echo `hostname -I` > /etc/mesos-master/hostname
     root@localhost:~$echo "DataMan" > /etc/mesos-master/cluster
     ```
  
@@ -123,7 +123,7 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
     root@localhost:~$export ZK2=< zookeeper IP2 >
     root@localhost:~$export ZK3=< zookeeper IP3 >
     root@localhost:~$echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/marathon" > zk
-    root@localhost:~$echo `hostname` > hostname
+    root@localhost:~$echo `hostname -I` > hostname
     root@localhost:~$echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/mesos" > master
     ```
  
