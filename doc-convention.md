@@ -30,6 +30,22 @@
  * 如果是纯文本，段落之间使用一个空行隔开。如果是 HTML 或其他富文本格式，使用额外空白作为段落间的分隔。
  * 段落开头不要留出空白字符。
 
+## 代码
+
+  下面是一段bash代码示例：
+  
+    ```bash
+    # 分别设置环境变量 ZK1, ZK2 和 ZK3 为3台主机的ip地址
+    root@localhost:~$export ZK1=< zookeeper IP1 >
+    root@localhost:~$export ZK2=< zookeeper IP2 >
+    root@localhost:~$export ZK3=< zookeeper IP3 >
+    root@localhost:~$echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/mesos" > /etc/mesos/zk
+    root@localhost:~$echo 2 > /etc/mesos-master/quorum
+    root@localhost:~$echo `hostname -I` > /etc/mesos-master/ip
+    root@localhost:~$echo `hostname -I` > /etc/mesos-master/hostname
+    root@localhost:~$echo "DataMan" > /etc/mesos-master/cluster
+    ```
+
 ## 对第三方内容的引用
 
 ### 如果在正文中部分引用第三方内容，请使用恰当的引用格式并给出出处。如：
