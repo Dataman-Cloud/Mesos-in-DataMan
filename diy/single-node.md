@@ -47,7 +47,7 @@ Apache Mesos是由加州大学伯克利分校的AMPLab首先开发的一款开�
 
 因为是初级环境，所以本环境中只包括了Mesos自身系统和调度框架中最基础的一种---Marathon。以及因为是单机所以没有部署Docker私有仓库。
 ### 3.2 应用部署拓扑图
-![MesosSystem](https://github.com/Dataman-Cloud/operation/blob/master/%E8%BF%90%E7%BB%B4%E6%96%87%E6%A1%A3/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/mesos%E5%8D%95%E6%9C%BApoc/mesos-system.png "Title")
+![MesosSystem](../diy/mesos-system.png "Title")
 ### 3.3 拓扑图说明
 整体系统部署分5个部分:
 
@@ -313,7 +313,7 @@ bamboo-json配置文件基础说明:
 #### 4.1.1 打开marathon－web-ui界面
     http://你安装mesos系统的机器ip地址:8080
 ##### 4.1.1.1 创建新任务(点击+NewApp)
-![marathon1](https://github.com/Dataman-Cloud/operation/blob/master/%E8%BF%90%E7%BB%B4%E6%96%87%E6%A1%A3/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/mesos%E5%8D%95%E6%9C%BApoc/marathon-top-1.png)
+![marathon1](../diy/marathon-top-1.png)
 ##### 4.1.1.2 填写本次任务的数据信息
     #任务名(很重要,参考后面nginx例子)
     ID         dataman-top-test
@@ -336,9 +336,9 @@ bamboo-json配置文件基础说明:
     #约束
     Constraints 空
 ##### 4.1.1.3 执行创建任务(点击+Create) 
-![marathon2](https://github.com/Dataman-Cloud/operation/blob/master/%E8%BF%90%E7%BB%B4%E6%96%87%E6%A1%A3/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/mesos%E5%8D%95%E6%9C%BApoc/marathon-top-2.png)
+![marathon2](../diy/marathon-top-2.png)
 ##### 4.1.1.4 marathon创建过程
-![marathon3](https://github.com/Dataman-Cloud/operation/blob/master/%E8%BF%90%E7%BB%B4%E6%96%87%E6%A1%A3/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/mesos%E5%8D%95%E6%9C%BApoc/marathon-top-3.png)
+![marathon3](../diy/marathon-top-3.png)
 
     可以看到marathon的任务表中显示的任务状态
     任务id(/dataman-top-test)
@@ -348,11 +348,11 @@ bamboo-json配置文件基础说明:
     健康心跳状态(空)
     状态(Deploying)
 ##### 4.1.1.5 创建结束查看结果
-![marathon4](https://github.com/Dataman-Cloud/operation/blob/master/%E8%BF%90%E7%BB%B4%E6%96%87%E6%A1%A3/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/mesos%E5%8D%95%E6%9C%BApoc/marathon-top-4.png)
+![marathon4](../diy/marathon-top-4.png)
 
     和创建过程信息一样，但是已经可以看到运行实力信息(1/1),状态是(Running)
 ##### 4.1.1.6 进入单一任务详细状态
-![marathon5](https://github.com/Dataman-Cloud/operation/blob/master/%E8%BF%90%E7%BB%B4%E6%96%87%E6%A1%A3/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/mesos%E5%8D%95%E6%9C%BApoc/marathon-top-5.png)
+![marathon5](../diy/marathon-top-5.png)
 
     点击任务名进入单一任务详细操作界面
     Suspend 将任务设置为空
@@ -363,12 +363,12 @@ bamboo-json配置文件基础说明:
     version 任务已创建时间
     Updated 最新任务操作时间
 ##### 4.1.1.7 查看任务数据信息
-![marathon6](https://github.com/Dataman-Cloud/operation/blob/master/%E8%BF%90%E7%BB%B4%E6%96%87%E6%A1%A3/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/mesos%E5%8D%95%E6%9C%BApoc/marathon-top-6.png)
+![marathon6](../diy/marathon-top-6.png)
     点击Configuration任务创建的数据信息，同4.1.3类似
 #### 4.1.2 打开mesos-master
     http://你安装mesos系统的机器ip地址:5050
 ##### 4.1.2.1 mesos-master总览
-![marathon7](https://github.com/Dataman-Cloud/operation/blob/master/%E8%BF%90%E7%BB%B4%E6%96%87%E6%A1%A3/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/mesos%E5%8D%95%E6%9C%BApoc/marathon-top-7.png)
+![marathon7](../diy/marathon-top-7.png)
 ##### 4.1.2.2 mesos-master信息
     左上角可以看到mesos-master信息，包括集群名、masterip、创建时间、集群启动时间等
 ##### 4.1.2.3 LOG    
@@ -394,7 +394,7 @@ bamboo-json配置文件基础说明:
     #正在运行的任务统计
     这里可以看到刚才创建的任务
 ##### 4.1.2.8 Sandbox
-![marathon8](https://github.com/Dataman-Cloud/operation/blob/master/%E8%BF%90%E7%BB%B4%E6%96%87%E6%A1%A3/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/mesos%E5%8D%95%E6%9C%BApoc/marathon-top-8.png)
+![marathon8](../diy/marathon-top-8.png)
 
     #这里可以查看任务运行内部的动态日志，包括正确和错误的
    stderr
@@ -524,23 +524,23 @@ bamboo-json配置文件基础说明:
     * Connection #0 to host 127.0.0.1 left intact
     {"id":"/dataman-nginx-test","cmd":"nginx","args":null,"user":null,"env":{},"instances":5,"cpus":0.1,"mem":128.0,"disk":0.0,"executor":"","constraints":[],"uris":[],"storeUrls":[],"ports":[0],"requirePorts":false,"backoffFactor":1.15,"container":{"type":"DOCKER","volumes":[],"docker":{"image":"ubuntu-nginx-base","network":"BRIDGE","portMappings":[{"containerPort":80,"hostPort":0,"servicePort":10000,"protocol":"tcp"}],"privileged":false,"parameters":[],"forcePullImage":false}},"healthChecks":[{"path":"/","protocol":"HTTP","portIndex":0,"command":null,"gracePeriodSeconds":5,"intervalSeconds":20,"timeoutSeconds":20,"maxConsecutiveFailures":3,"ignoreHttp1xx":false}],"dependencies":[],"upgradeStrategy":{"minimumHealthCapacity":1.0,"maximumOverCapacity":1.0},"labels":{},"version":"2015-07-01T10:37:19.979Z","deployments":[{"id":"ec0ccd2e-c5d9-4b07-87c9-e61cd411cdcd"}],"tasks":[],"tasksStaged":0,"tasksRunning":0,"tasksHealthy":0,"tasksUnhealthy":0,"backoffSeconds":1,"maxLaunchDelaySeconds":3600}           
 #### 4.2.5 检查
-![nginx-1](https://github.com/Dataman-Cloud/operation/blob/master/%E8%BF%90%E7%BB%B4%E6%96%87%E6%A1%A3/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/mesos%E5%8D%95%E6%9C%BApoc/marathon-nginx-1.png)
+![nginx-1](../diy/marathon-nginx-1.png)
 
     #这里需要注意的是因为配置了心跳监控，所以心跳监控的变成绿色了
 #### 4.2.6 检查容器nginx网络服务
-![nginx-2](https://github.com/Dataman-Cloud/operation/blob/master/%E8%BF%90%E7%BB%B4%E6%96%87%E6%A1%A3/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/mesos%E5%8D%95%E6%9C%BApoc/marathon-nginx-2.png)
+![nginx-2](../diy/marathon-nginx-2.png)
 
     #点击这里会可以直接跳到nginx服务界面，说明服务正常
 #### 4.2.7 bamboo设置
 ##### 4.2.7.1 bamboo主界面    
     进入bambooweb界面http://测试主机ip:8000/
-![bamboo1](https://github.com/Dataman-Cloud/operation/blob/master/%E8%BF%90%E7%BB%B4%E6%96%87%E6%A1%A3/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/mesos%E5%8D%95%E6%9C%BApoc/bamboo-1.png)
+![bamboo1](../diy/bamboo-1.png)
 ##### 4.2.7.2 添加bamboo规则转发nginx
     转发规则默认2种:目录转发和域名转发，本次测试使用目录格式，需要将nginx的web服务端口转发到haproxy 80端口的根目录。
-![bamboo2](https://github.com/Dataman-Cloud/operation/blob/master/%E8%BF%90%E7%BB%B4%E6%96%87%E6%A1%A3/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/mesos%E5%8D%95%E6%9C%BApoc/bamboo-2.png)
+![bamboo2](../diy/bamboo-2.png)
 ##### 4.2.7.3 直接访问主机80端口
     到游览器访问http://测试主机ip
-![bamboo3](https://github.com/Dataman-Cloud/operation/blob/master/%E8%BF%90%E7%BB%B4%E6%96%87%E6%A1%A3/%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3/mesos%E5%8D%95%E6%9C%BApoc/bamboo-3.png)
+![bamboo3](../diy/bamboo-3.png)
 
 ## 参考文档
 [Mesos数人企业版](http://get.dataman.io/)
