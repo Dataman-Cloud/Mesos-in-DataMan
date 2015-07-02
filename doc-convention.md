@@ -32,19 +32,19 @@
 
 ## 代码
 
-  下面是一段bash代码示例：
+下面是一段bash代码示例：
   
-    ```bash
-    # 分别设置环境变量 ZK1, ZK2 和 ZK3 为3台主机的ip地址
-    root@localhost:~$export ZK1=< zookeeper IP1 >
-    root@localhost:~$export ZK2=< zookeeper IP2 >
-    root@localhost:~$export ZK3=< zookeeper IP3 >
-    root@localhost:~$echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/mesos" > /etc/mesos/zk
-    root@localhost:~$echo 2 > /etc/mesos-master/quorum
-    root@localhost:~$echo `hostname -I` > /etc/mesos-master/ip
-    root@localhost:~$echo `hostname -I` > /etc/mesos-master/hostname
-    root@localhost:~$echo "DataMan" > /etc/mesos-master/cluster
-    ```
+```bash
+  # 分别设置环境变量 ZK1, ZK2 和 ZK3 为3台主机的ip地址
+  root@localhost:~$export ZK1=< zookeeper IP1 >
+  root@localhost:~$export ZK2=< zookeeper IP2 >
+  root@localhost:~$export ZK3=< zookeeper IP3 >
+  root@localhost:~$echo "zk://$ZK1:2181,$ZK2:2181,$ZK3:2181/mesos" > /etc/mesos/zk
+  root@localhost:~$echo 2 > /etc/mesos-master/quorum
+  root@localhost:~$echo `hostname -I` > /etc/mesos-master/ip
+  root@localhost:~$echo `hostname -I` > /etc/mesos-master/hostname
+  root@localhost:~$echo "DataMan" > /etc/mesos-master/cluster
+```
 
 ## 对第三方内容的引用
 
