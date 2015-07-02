@@ -7,7 +7,7 @@ Apache Mesos 作为新兴的统一资源管理与调度平台，其编译，安�
 
 ##集群架构图
 
-![Mesos集群架构图](../mesos-cluster-structure.png)
+![Mesos集群架构图](../iaas/mesos-cluster-structure.png)
 
 1. mesos-master-*: 部署了zookeeper, ，Mesos-Master，Marathon 以及 Chronos
 2. mesos-slave-*: 部署了mesos-slave agent
