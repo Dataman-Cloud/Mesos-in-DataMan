@@ -4,7 +4,7 @@
 #### 打开marathon－web-ui界面
     http://你安装mesos系统的机器ip地址:8080
 ##### 创建新任务(点击+NewApp)
-![marathon1](../diy/marathon-top-1.png)
+![marathon1](./marathon-top-1.png)
 ##### 填写本次任务的数据信息
     #任务名(很重要,参考后面nginx例子)
     ID         dataman-top-test
@@ -27,9 +27,9 @@
     #约束
     Constraints 空
 ##### 执行创建任务(点击+Create) 
-![marathon2](../diy/marathon-top-2.png)
+![marathon2](./marathon-top-2.png)
 ##### marathon创建过程
-![marathon3](../diy/marathon-top-3.png)
+![marathon3](./marathon-top-3.png)
 
     可以看到marathon的任务表中显示的任务状态
     任务id(/dataman-top-test)
@@ -39,11 +39,11 @@
     健康心跳状态(空)
     状态(Deploying)
 ##### 创建结束查看结果
-![marathon4](../diy/marathon-top-4.png)
+![marathon4](./marathon-top-4.png)
 
     和创建过程信息一样，但是已经可以看到运行实力信息(1/1),状态是(Running)
 ##### 进入单一任务详细状态
-![marathon5](../diy/marathon-top-5.png)
+![marathon5](./marathon-top-5.png)
 
     点击任务名进入单一任务详细操作界面
     Suspend 将任务设置为空
@@ -54,12 +54,12 @@
     version 任务已创建时间
     Updated 最新任务操作时间
 ##### 查看任务数据信息
-![marathon6](../diy/marathon-top-6.png)
+![marathon6](./marathon-top-6.png)
     点击Configuration任务创建的数据信息，同4.1.3类似
 #### 打开mesos-master
     http://你安装mesos系统的机器ip地址:5050
 ##### mesos-master总览
-![marathon7](../diy/marathon-top-7.png)
+![marathon7](./marathon-top-7.png)
 ##### mesos-master信息
     左上角可以看到mesos-master信息，包括集群名、masterip、创建时间、集群启动时间等
 ##### LOG    
@@ -85,7 +85,7 @@
     #正在运行的任务统计
     这里可以看到刚才创建的任务
 ##### Sandbox
-![marathon8](../diy/marathon-top-8.png)
+![marathon8](./marathon-top-8.png)
 
     #这里可以查看任务运行内部的动态日志，包括正确和错误的
    stderr
@@ -215,23 +215,23 @@
     * Connection #0 to host 127.0.0.1 left intact
     {"id":"/dataman-nginx-test","cmd":"nginx","args":null,"user":null,"env":{},"instances":5,"cpus":0.1,"mem":128.0,"disk":0.0,"executor":"","constraints":[],"uris":[],"storeUrls":[],"ports":[0],"requirePorts":false,"backoffFactor":1.15,"container":{"type":"DOCKER","volumes":[],"docker":{"image":"ubuntu-nginx-base","network":"BRIDGE","portMappings":[{"containerPort":80,"hostPort":0,"servicePort":10000,"protocol":"tcp"}],"privileged":false,"parameters":[],"forcePullImage":false}},"healthChecks":[{"path":"/","protocol":"HTTP","portIndex":0,"command":null,"gracePeriodSeconds":5,"intervalSeconds":20,"timeoutSeconds":20,"maxConsecutiveFailures":3,"ignoreHttp1xx":false}],"dependencies":[],"upgradeStrategy":{"minimumHealthCapacity":1.0,"maximumOverCapacity":1.0},"labels":{},"version":"2015-07-01T10:37:19.979Z","deployments":[{"id":"ec0ccd2e-c5d9-4b07-87c9-e61cd411cdcd"}],"tasks":[],"tasksStaged":0,"tasksRunning":0,"tasksHealthy":0,"tasksUnhealthy":0,"backoffSeconds":1,"maxLaunchDelaySeconds":3600}           
 #### 检查
-![nginx-1](../diy/marathon-nginx-1.png)
+![nginx-1](./marathon-nginx-1.png)
 
     #这里需要注意的是因为配置了心跳监控，所以心跳监控的变成绿色了
 #### 检查容器nginx网络服务
-![nginx-2](../diy/marathon-nginx-2.png)
+![nginx-2](./marathon-nginx-2.png)
 
     #点击这里会可以直接跳到nginx服务界面，说明服务正常
 #### bamboo设置
 ##### bamboo主界面    
     进入bambooweb界面http://测试主机ip:8000/
-![bamboo1](../diy/bamboo-1.png)
+![bamboo1](./bamboo-1.png)
 ##### 添加bamboo规则转发nginx
     转发规则默认2种:目录转发和域名转发，本次测试使用目录格式，需要将nginx的web服务端口转发到haproxy 80端口的根目录。
-![bamboo2](../diy/bamboo-2.png)
+![bamboo2](./bamboo-2.png)
 ##### 直接访问主机80端口
     到游览器访问http://测试主机ip
-![bamboo3](../diy/bamboo-3.png)
+![bamboo3](./bamboo-3.png)
 
 ## 参考文档
 [Mesos数人企业版](http://get.dataman.io/)
