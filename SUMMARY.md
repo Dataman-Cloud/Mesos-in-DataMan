@@ -1,7 +1,7 @@
 # Summary
 
 * [简介](overview/README.md)
-    * [简介](overview/overview.md)
+    * [Omega Cloud 简介](overview/overview.md)
     * [Mesos 和 Docker 简介](overview/Introduction-of-Mesos-Docker.md)
 * [试用](diy/README.md)
     * [单机试用](diy/single-node.md)
