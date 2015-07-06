@@ -1,4 +1,4 @@
-### 如何试用 Omega Cloud
+### 试用 Omega Cloud 指南
 
 
 Omega Cloud是一个高性能的分布式操作系统，目的在云计算环境下向用户提供一个高性能、高可靠和易管理的应用运行环境。它既可以部署在用户租用的公有云上，也可以部署在私有云或者传统物理机上。Omega Cloud 将整个集群服务器的计算和内存资源统一管理，能够让用户像管理一台机器一样管理所有的的服务器，Omega Cloud负责动态调度下层资源，大大简化了管理工作。Omega Cloud 作为一个分布式系统，技术栈主要包括了Mesos和Docker，需要安装如下的组件：
@@ -26,7 +26,7 @@ Omega Cloud是一个高性能的分布式操作系统，目的在云计算环境
 如果您想学习 Mesos 的原理，自己来手工部署一个集群，也可以尝试一下我们的 [数人科技 Mesos 企业发行版](enterprise-release.md)。这个版本包含了一个以 Mesos 为基础的分布式集群所需全部组件，并且提供国内高速下载源。
 
 #### 管理和发布应用
-Omega Cloud 利用内置的 Marathon 来进行应用管理，您可以在这里找到我们翻译的 [Marathon使用文档中文版]()（待完成）。
+Omega Cloud 利用内置的 Marathon 来进行应用管理，请阅读 [如何使用 Marathon 来管理 Omega Cloud 中的应用](/get-started/introduction.md)。您也可以阅读翻译的 [Marathon 官方使用文档中文版]()（待完成）。
 
 #### 使用 Docker 来打包应用
 如果您想将您的应用发布到 Mesos 集群中，你需要掌握使用 Docker 来封装应用的基本知识。Docker的安装和配置请参考如下资料，目前需求的Docker版本请参照软硬件环境列表。
