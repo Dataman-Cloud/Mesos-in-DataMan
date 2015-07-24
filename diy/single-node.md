@@ -189,6 +189,8 @@
 配置Marathon相关信息
 
 ```bash
+    #创建配置文件目录
+    mkdir /etc/marathon/conf
     #指定marathon配置目录
     MARATHON_CONF_DIR="/etc/marathon/conf"
     #指定marathon在zk目录路径
@@ -206,7 +208,7 @@
 ##### 注释 ha 模版的8080部分，否则该8080端口和 marathon 自带默认端口冲突
 
 ```bash
-    vim /opt/bamboo/conf/haproxy_template.cfg
+    vim /opt/bamboo/config/haproxy_template.cfg
     
     #注释掉一下模版
     frontend websocket-in
