@@ -137,7 +137,7 @@
     if [ -f "$P_NAME" ];then
         /bin/rm -Rf $P_NAME
     fi
-    sudo /usr/bin/wget https://github.com/Dataman-Cloud/bamboo/releases/download/dr-$VERSION/$P_NAME && sudo /bin/mkdir $BAMBOO_INSTALL_HOME && sudo /bin/tar xzvf $P_NAME -C $BAMBOO_INSTALL_HOME --strip-components=1 && sudo /bin/rm -f $P_NAME* && sudo /bin/chmod -R 775 $BAMBOO_INSTALL_HOME &&  sudo /bin/ln -s $BAMBOO_INSTALL_HOME $BAMBOO_HOME 
+    sudo /usr/bin/wget http://datamanpub.ufile.ucloud.com.cn/download/dataman-bamboo-0.9.0.tar.gz && sudo /bin/mkdir $BAMBOO_INSTALL_HOME && sudo /bin/tar xzvf $P_NAME -C $BAMBOO_INSTALL_HOME --strip-components=1 && sudo /bin/rm -f $P_NAME* && sudo /bin/chmod -R 775 $BAMBOO_INSTALL_HOME &&  sudo /bin/ln -s $BAMBOO_INSTALL_HOME $BAMBOO_HOME 
 ```
 
 ### 配置说明
