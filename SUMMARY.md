@@ -4,6 +4,7 @@
 * [简介](overview/README.md)
    * [Omega Cloud 云操作系统简介](overview/overview.md)
    * [Mesos 和 Docker 简介](overview/Introduction-of-Mesos-Docker.md)
+   * 数人云产品用户手册
 * [试用](diy/diy.md)
    * [单机试用](diy/single-node.md)
    * 公有云部署
