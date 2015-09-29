@@ -17,7 +17,7 @@
 ![](Create a new cluster.png)    
 
 
-**1.2 删除集群 **    
+**1.2 删除集群**    
 用户在集群管理、集群详情页面都可以删除集群，确认删除后，数人云平台会停止集群上运行的所有应用、组件，但应用产生的业务数据依然保留在原主机上。   
 ![](Remove Cluster on Cluster Management.png) 
 
