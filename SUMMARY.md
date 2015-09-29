@@ -18,5 +18,5 @@
 * [资源](resources/README.md)
    * [Marathon 官方用户文档中文版](resources/marathon-cn.md)
    * [Mesos 官方用户文档中文版](resources/mesos-cn.md)
-* 数人云产品用户手册
+* [数人云产品用户手册](shu_ren_yun_chan_pin_yong_hu_shou_ce.md)
 
