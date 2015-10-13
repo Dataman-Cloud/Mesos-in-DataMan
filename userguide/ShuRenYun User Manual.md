@@ -42,7 +42,8 @@
 ![](Clster Management.png) 
 
 当集群中超过半数的master为非正常状态时，集群也将被标识为异常状态，如下图所示。     
-![](Cluster Management--cluster doesn't work.png)     
+![](Cluster Management--cluster doesn't work.png)   
+
 
 **3.2 集群中的主机**   
 集群管理页和集群详情页（可由查看集群进入）都能看到集群中的主机，每个主机的图形、文字符号，也都可以转向主机的详情页面（详见4、查看主机）。     
