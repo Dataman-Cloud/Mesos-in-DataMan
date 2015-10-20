@@ -17,11 +17,11 @@
   * [日志管理](log.md)
 * [快速实践](practice/README.md)
   * [三步发布2048小游戏](practice/2048.md)
-<!--  * [快速搭建LAMP架构集群]() -->
+  * 快速搭建LAMP架构集群
 * [视频教程](video/README.md)
 * [Docker简明教程](docker/README.md)
   * [Docker简介](docker/1/Docker-info.md)
   * [Docker速成手册](docker/2/Docker.md)
   * [Docker使用小技巧](docker/3/Docker小技巧.md)
-<!-- * [常见问题]() -->
+* 常见问题
 * [联系我们](contactus/README.md)
