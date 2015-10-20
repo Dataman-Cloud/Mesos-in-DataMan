@@ -1,7 +1,31 @@
-# Summary
+# 数人云用户手册
 
-* [Introduction](README.md)
-* [简介](overview/README.md)
+* [数人云介绍](overview/README.md)
+  * [数人云简介](overview/overview.md)
+  * [注册账户](overview/register.md)
+* [产品功能](README.md)
+  * [集群管理](overview/overview.md)
+    * [创建/删除集群](overview/overview.md)
+    * [添加/删除主机](overview/overview.md)
+    * [集群/主机监控](overview/overview.md)
+  * [应用管理](overview/overview.md)
+    * [创建/删除应用](overview/overview.md)
+    * [查看应用状态](overview/overview.md)
+    * [启动/停止应用](overview/overview.md)
+    * [应用弹性伸缩](overview/overview.md)
+  * [日志管理](overview/overview.md)
+* [快速实践](README.md)
+  * [三步发布2048小游戏](README.md)
+  * [快速搭建LAMP架构集群](README.md)
+* [视频教程](README.md)
+* [Docker简明教程](README.md)
+* [常见问题](README.md)
+* [联系我们](README.md)
+
+
+
+* [数人云](README.md)
+* [数人云简介](overview/README.md)
    * [Omega Cloud 云操作系统简介](overview/overview.md)
    * [Mesos 和 Docker 简介](overview/Introduction-of-Mesos-Docker.md)
    * 数人云产品用户手册
@@ -20,4 +44,3 @@
    * [Marathon 官方用户文档中文版](resources/marathon-cn.md)
    * [Mesos 官方用户文档中文版](resources/mesos-cn.md)
 * [数人云产品用户手册](ShuRenYun User Manual.md)
-
