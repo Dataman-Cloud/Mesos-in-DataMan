@@ -46,7 +46,7 @@ Docker 包括三个基本概念
 使用`docker pull`命令获取镜像。
 #### 从 Docker Hub 获取 base 镜像 ubuntu 系统，版本12.04
 下载过程中，会获取镜像的每一层信息，以下命令相当于执行了`$ sudo docker pull registry.hub.docker.com/ubuntu:12.04`
-    
+
     $ sudo docker pull ubuntu:12.04
     Pulling repository ubuntu
     ab8e2728644c: Pulling dependent layers
@@ -71,7 +71,7 @@ Docker 包括三个基本概念
     ubuntu           14.04    99ec81b80c55  4 weeks ago  266 MB
     ...
 参数描述
-    
+
     REPOSITORY  来自于哪个仓库，什么软件比如 ubuntu
     TAG         镜像标记，比如 14.04
     IMAGE ID    镜像ID 号（唯一）
@@ -86,18 +86,18 @@ Docker 包括三个基本概念
 
 #### 现有镜像生成
 先使用现有镜像启动容器
-    
+
     $ sudo docker run -t -i ubuntu:14.04 /bin/bash
     root@0b2616b0e5a8:/#
 记住容器的 ID:0b2616b0e5a8,并按照对应linux方法安装应用
 
     root@0b2616b0e5a8:/# yum -y install nginx
 安装结束后，使用exit退出容器，然后使用`docker commit`命令提交新的镜像。
-    
+
     $ sudo docker commit -m "Added nginx" -a "Docker pro" 0b2616b0e5a8 ubuntu/nginx:v1
     4f177bd27a9ff0f6dc2a830403925b5360bfe0b93d476f7fc3231110e7f71b1c
 参数描述
-    
+
     -m                 来指定提交的说明信息，跟我们使用的版本控制工具一样；
     -a                 可以指定更新的用户信息；
     0b2616b0e5a8       是用来创建镜像的容器实例ID；
@@ -121,7 +121,7 @@ Docker 包括三个基本概念
     RUN          开头的指令会在创建中运行，比如安装一个软件包，在这里使用 apt-get 来安装了一些软件
 
 文件写完后退出编辑文件，生成镜像
-    
+
     sudo docker build -t ubuntu/nginx:v1 .
     Uploading context  2.56 kB
     Uploading context
@@ -133,7 +133,7 @@ Docker 包括三个基本概念
     Successfully built 324104cde6ad
 参数说明
 
-    -t     标记来添加 tag，指定新的镜像的用户信息。 
+    -t     标记来添加 tag，指定新的镜像的用户信息。
     “.”    是 Dockerfile 所在的路径（当前目录），也可以替换为一个具体的 Dockerfile 的路径。
 上传镜像
 用户可以通过`docker push`命令,默认推到dockerhub上
@@ -144,7 +144,7 @@ Docker 包括三个基本概念
     .....
 ### 3.4 导出导入镜像
 使用`docker save -o`将镜像导出成`tar`包
-    
+
     sudo docker save -o ubuntu_14.04.tar ubuntu:14.04
 使用`docker load`将`tar`包导入镜像
 
@@ -182,7 +182,7 @@ Docker 包括三个基本概念
     8e712339857b        centos7/jdk8/jenkins1.628/base                                     "/bin/bash"              4 days ago          Exited (137) 5 seconds ago        jenkins
 启动关闭实例
 
-    docker start jenkins 
+    docker start jenkins
 ### 4.2 守护进程启动(后台运行)
 Docker在后台运行而不是直接把执行命令的结果输出在当前宿主机下。此时，可以通过添加 -d 参数来实现。
 
@@ -196,7 +196,7 @@ Docker在后台运行而不是直接把执行命令的结果输出在当前宿�
     hello world
     ......
 使用了`-d`参数运行容器
-    
+
     $ sudo docker run -d ubuntu:14.04 /bin/sh -c "while true; do echo hello world; sleep 1; done"
     77b2dc01fe0f3f1265df143181e7b9af5e05279a884f4776ee75350ea9d8017a
 使用`docker ps`命令来查看容器信息
@@ -218,7 +218,7 @@ Docker在后台运行而不是直接把执行命令的结果输出在当前宿�
     CONTAINER ID  IMAGE         COMMAND               CREATED        STATUS       PORTS NAMES
     77b2dc01fe0f  ubuntu:14.04  /bin/sh -c 'while tr  2 minutes ago  Up 1 minute        agitated_wright
 使用`docker stop`来终止这个容器
-    
+
     $ sudo docker stop CONTAINER ID or NAMES
 当然也可以使用`docker restart`来重启这个容器
 
@@ -243,7 +243,7 @@ Docker在后台运行而不是直接把执行命令的结果输出在当前宿�
 
     $ sudo docker exec -it  77b2dc01fe0f /bin/bash
     [root@77b2dc01fe0f /]# exit
-    
+
     $ sudo docker ps
     CONTAINER ID  IMAGE         COMMAND               CREATED        STATUS       PORTS NAMES
     77b2dc01fe0f  ubuntu:14.04  /bin/sh -c 'while tr  2 minutes ago  Up 1 minute        agitated_wright
@@ -265,7 +265,7 @@ Docker在后台运行而不是直接把执行命令的结果输出在当前宿�
 #### 远程导入
 
     $sudo docker import http://example.com/exampleimage.tgz example/imagerepo
-        
+
 ### 4.5 删除实例
 可以使用 `docker rm`删除实例，删除一个终止状态的容器实例
 
@@ -273,9 +273,9 @@ Docker在后台运行而不是直接把执行命令的结果输出在当前宿�
     trusting_newton  
 也可以增加`-f`参数来删除一个运行中的容器实例
 
-    
+
     $sudo docker rm  -f trusting_newton
-    trusting_newton 
+    trusting_newton
 ## 5 仓库
 ### 5.1 Docker Hub
 目前 Docker 官方维护了一个公共仓库 Docker Hub，其中已经包括了超过 15,000 的镜像。大部分需求，都可以通过在 Docker Hub 中直接下载镜像来实现。
@@ -283,7 +283,7 @@ Docker在后台运行而不是直接把执行命令的结果输出在当前宿�
 可以通过`docker login`来登录，输入账户密码邮箱后完成注册和登录，登录后会在本地用户目录生成一个`.dockercfg`用户认证信息文件。
 #### 基本操作
 使用`docker search`来查询 Docker Hub 中的镜像，并可以使用`docker pull`下载到本地。
-    
+
     $ sudo docker search centos
     NAME                                            DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
     centos                                          The official build of CentOS.                   465       [OK]
@@ -432,7 +432,7 @@ Docker 挂载数据卷的默认权限是读写，用户也可以通过 :ro 指�
 
     $ sudo docker run -d -p 127.0.0.1::5000 training/webapp python app.py
 参数    
-   
+
     -p (小)使用 ip::containerPort 绑定 localhost 的任意端口到容器的 5000 端口
 ### 7.4 udp端口
 
@@ -460,5 +460,5 @@ Docker 挂载数据卷的默认权限是读写，用户也可以通过 :ro 指�
     CONTAINER ID  IMAGE                     COMMAND               CREATED             STATUS             PORTS                    NAMES
     349169744e49  training/postgres:latest  su postgres -c '/usr  About a minute ago  Up About a minute  5432/tcp                 db, web/db
     aed84ee21bde  training/webapp:latest    python app.py         16 hours ago        Up 2 minutes       0.0.0.0:49154->5000/tcp  web
-    
+
 Docker 在两个互联的容器之间创建了一个安全隧道，而且不用映射它们的端口到宿主主机上。在启动 db 容器的时候并没有使用 -p 和 -P 标记，从而避免了暴露数据库端口到外部网络上。
