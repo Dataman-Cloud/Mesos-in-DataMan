@@ -33,7 +33,7 @@
 ## 代码
 
 下面是一段bash代码示例：
-  
+
 ```bash
   # 分别设置环境变量 ZK1, ZK2 和 ZK3 为3台主机的ip地址
   root@localhost:~$export ZK1=< zookeeper IP1 >

@@ -19,19 +19,19 @@
 * 任务调度层
 
     包括:Mesos-Master和Frameworks(调度框架)
-    
+
     功能:资源和任务调度节点
 
 * 任务执行层
 
     包括:Mesos-Slave和Docker
-    
+
     功能:任务执行节点
 
 * 镜像存储
 
     包括:DockerRegistry
-    
+
     功能:环境存储节点
 
 * 数据交互层
@@ -41,9 +41,9 @@
     功能:集群状态、任务相关数据信息存储节点
 
 * 网络层
-    
+
     包括:Haproxy和Bamboo
-    
+
     功能:网络层服务发现节点
 
 ### 部署环境需求
@@ -55,7 +55,7 @@
 * dns 推荐 114.114.114.114(防止dns劫持，你懂的)
 
 ### 安装部署
- 
+
 #### 安装Docker
 
 ```bash
@@ -137,7 +137,7 @@
     if [ -f "$P_NAME" ];then
         /bin/rm -Rf $P_NAME
     fi
-    sudo /usr/bin/wget http://datamanpub.ufile.ucloud.com.cn/download/dataman-bamboo-0.9.0.tar.gz && sudo /bin/mkdir $BAMBOO_INSTALL_HOME && sudo /bin/tar xzvf $P_NAME -C $BAMBOO_INSTALL_HOME --strip-components=1 && sudo /bin/rm -f $P_NAME* && sudo /bin/chmod -R 775 $BAMBOO_INSTALL_HOME &&  sudo /bin/ln -s $BAMBOO_INSTALL_HOME $BAMBOO_HOME 
+    sudo /usr/bin/wget http://datamanpub.ufile.ucloud.com.cn/download/dataman-bamboo-0.9.0.tar.gz && sudo /bin/mkdir $BAMBOO_INSTALL_HOME && sudo /bin/tar xzvf $P_NAME -C $BAMBOO_INSTALL_HOME --strip-components=1 && sudo /bin/rm -f $P_NAME* && sudo /bin/chmod -R 775 $BAMBOO_INSTALL_HOME &&  sudo /bin/ln -s $BAMBOO_INSTALL_HOME $BAMBOO_HOME
 ```
 
 ### 配置说明
@@ -209,7 +209,7 @@
 
 ```bash
     vim /opt/bamboo/config/haproxy_template.cfg
-    
+
     #注释掉一下模版
     frontend websocket-in
         bind *:8080
@@ -236,7 +236,7 @@
     {{ end }}
     {{ end }}
 ```
-    
+
 ##### 修改 bamboo 配置
 
 ```bash
@@ -272,7 +272,7 @@
 
 bamboo-json配置文件基础说明:
 
-- http://127.0.0.1:8080 ＃Marathon地址 
+- http://127.0.0.1:8080 ＃Marathon地址
 - http://127.0.0.1:8000 ＃Bamboo地址
 - 127.0.0.1:2181 #zookeeper地址
 - /opt/bamboo/config/haproxy_template.cfg ＃bamboo自带haproxy配置文件模版路径
@@ -284,7 +284,7 @@ bamboo-json配置文件基础说明:
 
 ```bash
     #命令
-    service mesos-master (status｜start｜stop|restart) 
+    service mesos-master (status｜start｜stop|restart)
     #进程状态
     ps axuf | grep mesos-master | grep -v grep
     root      4343  0.0  0.4 1210808 18460 ?       Ssl  13:32   0:00 /usr/sbin/mesos-master --zk=zk://localhost:2181/mesos --port=5050 --log_dir=/var/log/mesos --hostname=10.3.1.2 --ip=0.0.0.0 --quorum=1 --work_dir=/var/lib/mesos

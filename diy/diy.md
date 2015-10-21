@@ -16,7 +16,7 @@ Omega Cloud是一个高性能的分布式操作系统，目的在云计算环境
 * [阿里云试用指南](iaas/aliyun.md)
 * [UCloud试用指南](iaas/ucloud.md)
 
-其他公有云正在陆续接入中。如果您有急切需求，请联系我们 <support.oc@dataman-inc.com> 
+其他公有云正在陆续接入中。如果您有急切需求，请联系我们 <support.oc@dataman-inc.com>
 
 
 #### 单机体验版

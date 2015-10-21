@@ -53,19 +53,19 @@
 
     $ curl -O http://downloads.mesosphere.com/marathon/marathon-0.6.1/marathon-0.6.1.tgz
     $ tar xzf marathon-0.6.1.tgz
-    
+
 
 
 
 对于Mesos 0.17.0~0.18.2：
-    
+
     $ curl -O http://downloads.mesosphere.com/marathon/marathon-0.5.1/marathon-0.5.1.tgz
     $ tar xzf marathon-0.5.1.tgz
 
 
 
 对于Mesos 0.16.0乃至更早的版本：
-    
+
     $ curl -O http://downloads.mesosphere.com/marathon/marathon-0.5.1_mesos-0.16.0/marathon-0.5.1_mesos-0.16.0.tgz
     $ tar xzf marathon-0.5.1_mesos-0.16.0.tgz
 
@@ -113,7 +113,7 @@
 
 
 在产品模式下启动Marathon，你需要ZooKeeper和Mesos同时运行，下面的命令将会在产品模式中启动Marathon，将你的web浏览器的localhost设为8080，你将会看到Marathon的界面。
-    
+
     $ ./bin/start --master zk://zk1.foo.bar:2181,zk2.foo.bar:2181/mesos --zk zk://zk1.foo.bar:2181,zk2.foo.bar:2181/marathon
 
 
@@ -132,7 +132,7 @@ Marathon使用`--master`命令去发现Mesos的master节点，使用`--zk`发现
 例如：
 
     $ MESOS_NATIVE_JAVA_LIBRARY=/Users/bob/libmesos.dylib ./bin/start --master local --zk zk://localhost:2181/marathon
-    
+
 
 ###启动应用
 

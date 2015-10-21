@@ -11,7 +11,7 @@
     #任务需要使用cpu最小大小
     CPUs       0.1
     #任务需要使用内存最小容量
-    Memory     16 
+    Memory     16
     #任务需要使用磁盘大小
     Disk       0
     #需要同时跑几个任务
@@ -26,7 +26,7 @@
     URIs       空
     #约束
     Constraints 空
-##### 执行创建任务(点击+Create) 
+##### 执行创建任务(点击+Create)
 ![marathon2](./marathon-top-2.png)
 ##### marathon创建过程
 ![marathon3](./marathon-top-3.png)
@@ -89,13 +89,13 @@
 
     #这里可以查看任务运行内部的动态日志，包括正确和错误的
    stderr
-   
+
     #日志样例
     I0701 14:35:19.243409  5881 exec.cpp:132] Version: 0.22.1
     I0701 14:35:19.246486  5883 exec.cpp:206] Executor registered on slave 20150701-140046-33620746-5050-5032-S0
-    
+
    stdout
-   
+
     #日志样例
     5508 root      20   0    4440    636    536 S   0.0  0.0   0:00.00 sh
     5509 root      20   0  125208   9348   4932 S   0.0  0.2   0:00.06 docker
