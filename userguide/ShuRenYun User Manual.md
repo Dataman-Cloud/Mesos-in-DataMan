@@ -43,7 +43,7 @@
 集群正常工作时，用户可以在集群管理页看到集群中4种主机状态下各有多少台主机，以及集群中每一个master的运行状态。     
 ![](Clster Management.png) 
 
-当集群中超过半数的master为非正常状态时，集群也将被标识为异常状态，如下图所示。     
+当集群中任一台master为非正常状态时，集群也将被标识为异常状态，如下图所示。     
 ![](Cluster Management--cluster doesn't work.png)   
 
 
